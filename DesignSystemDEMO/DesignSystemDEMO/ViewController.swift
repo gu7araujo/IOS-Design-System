@@ -40,8 +40,13 @@ struct ControllersGroup {
 
 enum ControllerDataSources {
     static var viewControllers = [
+        ControllersGroup(groupName: "STYLE", items: [
+            ControllerStruct(title: "Colors", viewControllerType: ColorsViewController.self),
+            ControllerStruct(title: "Typography", viewControllerType: TypographyViewController.self)
+        ]),
         ControllersGroup(groupName: "BUTTONS", items: [
-            ControllerStruct(title: "Button Component", viewControllerType: ViewController.self)
+            ControllerStruct(title: "Primary Button", viewControllerType: PrimaryButtonViewController.self),
+//            ControllerStruct(title: "Secondary Button", viewControllerType: PrimaryButtonViewController.self),
         ])
     ]
 }
@@ -66,4 +71,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = ControllerDataSources.viewControllers[indexPath.section].items[indexPath.row]
+
+        if let viewControllerType = viewController.viewControllerType {
+            let nextViewController = viewControllerType.init()
+            show(nextViewController, sender: self)
+        }
+    }
 }

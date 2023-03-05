@@ -22,9 +22,11 @@ let package = Package(
         .target(
             name: "DesignSystem",
             dependencies: [],
-            path: "Sources"),
+            path: "Sources",
+            resources: [.process("Assets.xcassets"), .process("Fonts")]),
         .testTarget(
             name: "DesignSystemTests",
             dependencies: ["DesignSystem"]),
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
