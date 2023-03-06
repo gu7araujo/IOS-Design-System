@@ -13,7 +13,6 @@
 		B7373DEE29A67D4700781764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7373DEC29A67D4700781764 /* Main.storyboard */; };
 		B7373DF029A67D4800781764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7373DEF29A67D4800781764 /* Assets.xcassets */; };
 		B7373DF329A67D4800781764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7373DF129A67D4800781764 /* LaunchScreen.storyboard */; };
-		B7373DFE29A67DB600781764 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B7373DFD29A67DB600781764 /* DesignSystem */; };
 		B7574A6729AFBE94006BC273 /* PrimaryButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7574A6629AFBE94006BC273 /* PrimaryButtonViewController.swift */; };
 		B79E764E29B26780009CCBEF /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E764D29B26780009CCBEF /* ColorsViewController.swift */; };
 		B79E765029B551E4009CCBEF /* TypographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E764F29B551E4009CCBEF /* TypographyViewController.swift */; };
@@ -28,7 +27,6 @@
 		B7373DEF29A67D4800781764 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7373DF229A67D4800781764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7373DF429A67D4800781764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7373DFB29A67D8000781764 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = ../DesignSystem; sourceTree = "<group>"; };
 		B7574A6629AFBE94006BC273 /* PrimaryButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonViewController.swift; sourceTree = "<group>"; };
 		B79E764D29B26780009CCBEF /* ColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
 		B79E764F29B551E4009CCBEF /* TypographyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +37,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7373DFE29A67DB600781764 /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +79,6 @@
 		B7373DFA29A67D8000781764 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				B7373DFB29A67D8000781764 /* DesignSystem */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -121,7 +117,6 @@
 			);
 			name = DesignSystemDEMO;
 			packageProductDependencies = (
-				B7373DFD29A67DB600781764 /* DesignSystem */,
 			);
 			productName = DesignSystemDEMO;
 			productReference = B7373DE329A67D4700781764 /* DesignSystemDEMO.app */;
@@ -403,13 +398,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B7373DFD29A67DB600781764 /* DesignSystem */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DesignSystem;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B7373DDB29A67D4700781764 /* Project object */;
 }

@@ -1,1 +1,3 @@
-# IOS-Design-System
+# DesignSystem
+
+A description of this package.
