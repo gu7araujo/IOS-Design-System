@@ -22,7 +22,6 @@ public class PrimaryButton: UIControl {
         buildConstraints()
         setSize(size)
         setEnabledStyle()
-        print(Typography.buttonLabel.rawValue)
     }
 
     required init?(coder: NSCoder) {
@@ -52,7 +51,7 @@ public class PrimaryButton: UIControl {
     private func setDisabledStyle() {
         layer.cornerRadius = 16
         backgroundColor = Colors.cloud.rawValue
-        titleLabel.textColor = Colors.white.rawValue
+        titleLabel.textColor = Colors.black.rawValue
     }
 
     private func setHighlightedStyle() {

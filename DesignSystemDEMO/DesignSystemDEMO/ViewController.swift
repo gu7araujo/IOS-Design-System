@@ -45,8 +45,7 @@ enum ControllerDataSources {
             ControllerStruct(title: "Typography", viewControllerType: TypographyViewController.self)
         ]),
         ControllersGroup(groupName: "BUTTONS", items: [
-            ControllerStruct(title: "Primary Button", viewControllerType: PrimaryButtonViewController.self),
-//            ControllerStruct(title: "Secondary Button", viewControllerType: PrimaryButtonViewController.self),
+            ControllerStruct(title: "Primary Button", viewControllerType: PrimaryButtonViewController.self)
         ])
     ]
 }

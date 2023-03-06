@@ -10,11 +10,32 @@ import DesignSystem
 
 class PrimaryButtonViewController: UIViewController {
 
-    private lazy var primaryButton: PrimaryButton = {
-        let button = PrimaryButton(size: .large)
-        button.set(title: "Tap me")
+    private lazy var primaryButtonSizeNormal: PrimaryButton = {
+        let button = PrimaryButton(size: .normal)
+        button.set(title: "Size normal")
         return button
     }()
+
+    private lazy var primaryButtonSizeMedium: PrimaryButton = {
+        let button = PrimaryButton()
+        button.set(title: "Size medium")
+        return button
+    }()
+
+    private lazy var primaryButtonSizeLarge: PrimaryButton = {
+        let button = PrimaryButton(size: .large)
+        button.set(title: "Size large")
+        return button
+    }()
+
+    private lazy var primaryButtonDisabled: PrimaryButton = {
+        let button = PrimaryButton()
+        button.set(title: "Disabled")
+        button.isEnabled = false
+        return button
+    }()
+
+    private lazy var buttonsView = UIView()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -33,17 +54,49 @@ class PrimaryButtonViewController: UIViewController {
     }
 
     private func buildTree() {
-        view.addSubview(primaryButton)
+        buttonsView.addSubview(primaryButtonSizeNormal)
+        buttonsView.addSubview(primaryButtonSizeMedium)
+        buttonsView.addSubview(primaryButtonSizeLarge)
+        buttonsView.addSubview(primaryButtonDisabled)
+        view.addSubview(buttonsView)
     }
 
     private func buildConstraints() {
-        primaryButton.translatesAutoresizingMaskIntoConstraints = false
+        buttonsView.translatesAutoresizingMaskIntoConstraints = false
+        primaryButtonSizeNormal.translatesAutoresizingMaskIntoConstraints = false
+        primaryButtonSizeMedium.translatesAutoresizingMaskIntoConstraints = false
+        primaryButtonSizeLarge.translatesAutoresizingMaskIntoConstraints = false
+        primaryButtonDisabled.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
-            primaryButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            primaryButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            primaryButton.heightAnchor.constraint(equalToConstant: 40),
-            primaryButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            primaryButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            primaryButtonSizeNormal.leadingAnchor.constraint(equalTo: buttonsView.leadingAnchor),
+            primaryButtonSizeMedium.leadingAnchor.constraint(equalTo: buttonsView.leadingAnchor),
+            primaryButtonSizeLarge.leadingAnchor.constraint(equalTo: buttonsView.leadingAnchor),
+            primaryButtonDisabled.leadingAnchor.constraint(equalTo: buttonsView.leadingAnchor),
+
+            primaryButtonSizeNormal.trailingAnchor.constraint(equalTo: buttonsView.trailingAnchor),
+            primaryButtonSizeMedium.trailingAnchor.constraint(equalTo: buttonsView.trailingAnchor),
+            primaryButtonSizeLarge.trailingAnchor.constraint(equalTo: buttonsView.trailingAnchor),
+            primaryButtonDisabled.trailingAnchor.constraint(equalTo: buttonsView.trailingAnchor),
+
+
+            primaryButtonSizeNormal.heightAnchor.constraint(equalToConstant: 40),
+            primaryButtonSizeMedium.heightAnchor.constraint(equalToConstant: 40),
+            primaryButtonSizeLarge.heightAnchor.constraint(equalToConstant: 40),
+            primaryButtonDisabled.heightAnchor.constraint(equalToConstant: 40),
+
+            primaryButtonSizeNormal.topAnchor.constraint(equalTo: buttonsView.topAnchor),
+            primaryButtonSizeMedium.topAnchor.constraint(equalTo: primaryButtonSizeNormal.bottomAnchor, constant: 5),
+            primaryButtonSizeLarge.topAnchor.constraint(equalTo: primaryButtonSizeMedium.bottomAnchor, constant: 5),
+            primaryButtonDisabled.topAnchor.constraint(equalTo: primaryButtonSizeLarge.bottomAnchor, constant: 5)
+        ])
+
+        NSLayoutConstraint.activate([
+            buttonsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            buttonsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            buttonsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonsView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            buttonsView.heightAnchor.constraint(equalToConstant: 175)
         ])
     }
 
