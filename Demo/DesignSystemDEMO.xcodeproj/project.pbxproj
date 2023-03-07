@@ -16,6 +16,7 @@
 		B7574A6729AFBE94006BC273 /* PrimaryButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7574A6629AFBE94006BC273 /* PrimaryButtonViewController.swift */; };
 		B79E764E29B26780009CCBEF /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E764D29B26780009CCBEF /* ColorsViewController.swift */; };
 		B79E765029B551E4009CCBEF /* TypographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E764F29B551E4009CCBEF /* TypographyViewController.swift */; };
+		B7EF647129B7A5BA00A372DF /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B7EF647029B7A5BA00A372DF /* DesignSystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7EF647129B7A5BA00A372DF /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,7 +48,6 @@
 		B7373DDA29A67D4700781764 = {
 			isa = PBXGroup;
 			children = (
-				B7373DFA29A67D8000781764 /* Packages */,
 				B7373DE529A67D4700781764 /* DesignSystemDEMO */,
 				B7373DE429A67D4700781764 /* Products */,
 				B7373DFC29A67DB600781764 /* Frameworks */,
@@ -74,13 +75,6 @@
 				B7373DF429A67D4800781764 /* Info.plist */,
 			);
 			path = DesignSystemDEMO;
-			sourceTree = "<group>";
-		};
-		B7373DFA29A67D8000781764 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Packages;
 			sourceTree = "<group>";
 		};
 		B7373DFC29A67DB600781764 /* Frameworks */ = {
@@ -117,6 +111,7 @@
 			);
 			name = DesignSystemDEMO;
 			packageProductDependencies = (
+				B7EF647029B7A5BA00A372DF /* DesignSystem */,
 			);
 			productName = DesignSystemDEMO;
 			productReference = B7373DE329A67D4700781764 /* DesignSystemDEMO.app */;
@@ -146,6 +141,9 @@
 				Base,
 			);
 			mainGroup = B7373DDA29A67D4700781764;
+			packageReferences = (
+				B7EF646F29B7A5BA00A372DF /* XCRemoteSwiftPackageReference "IOS-Design-System" */,
+			);
 			productRefGroup = B7373DE429A67D4700781764 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -398,6 +396,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B7EF646F29B7A5BA00A372DF /* XCRemoteSwiftPackageReference "IOS-Design-System" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gu7araujo/IOS-Design-System";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B7EF647029B7A5BA00A372DF /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7EF646F29B7A5BA00A372DF /* XCRemoteSwiftPackageReference "IOS-Design-System" */;
+			productName = DesignSystem;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B7373DDB29A67D4700781764 /* Project object */;
 }
