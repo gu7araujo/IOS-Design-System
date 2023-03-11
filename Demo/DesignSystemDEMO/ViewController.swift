@@ -46,6 +46,9 @@ enum ControllerDataSources {
         ]),
         ControllersGroup(groupName: "BUTTONS", items: [
             ControllerStruct(title: "Primary Button", viewControllerType: PrimaryButtonViewController.self)
+        ]),
+        ControllersGroup(groupName: "VIEWS", items: [
+            ControllerStruct(title: "Loading", viewControllerType: LoadViewController.self)
         ])
     ]
 }

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  UIViewController+Extension.swift
 //  
 //
 //  Created by Gustavo Araujo Santos on 11/03/23.
@@ -9,24 +9,17 @@ import UIKit
 
 extension UIViewController {
 
+    static var loadingViewTag = 22
+
     public func setLoading() {
-        restoreContent()
         let loadingViewController = LoadingViewController()
-        loadingViewController.view.frame = view.bounds
-        loadingViewController.willMove(toParent: self)
-        addChild(loadingViewController)
-        view.insertSubview(loadingViewController.view, at: view.subviews.count)
-        loadingViewController.didMove(toParent: self)
+        loadingViewController.view.tag = UIViewController.loadingViewTag
+        UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.addSubview(loadingViewController.view)
     }
 
     public func restoreContent() {
-        guard
-            let loadingViewController = children.first(where: { $0 is LoadingViewController })
-        else { return }
-        loadingViewController.willMove(toParent: self)
-        loadingViewController.removeFromParent()
-        loadingViewController.view.removeFromSuperview()
-        loadingViewController.didMove(toParent: self)
+        guard let loadingView = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.viewWithTag(UIViewController.loadingViewTag) else { return }
+        loadingView.removeFromSuperview()
     }
 
     public func simpleAlert(

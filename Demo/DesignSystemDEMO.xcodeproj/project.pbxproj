@@ -14,9 +14,10 @@
 		B7373DF029A67D4800781764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7373DEF29A67D4800781764 /* Assets.xcassets */; };
 		B7373DF329A67D4800781764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7373DF129A67D4800781764 /* LaunchScreen.storyboard */; };
 		B7574A6729AFBE94006BC273 /* PrimaryButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7574A6629AFBE94006BC273 /* PrimaryButtonViewController.swift */; };
+		B77FC88A29BCC899008500AB /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77FC88929BCC899008500AB /* LoadViewController.swift */; };
+		B77FC88E29BCDE2F008500AB /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B77FC88D29BCDE2F008500AB /* DesignSystem */; };
 		B79E764E29B26780009CCBEF /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E764D29B26780009CCBEF /* ColorsViewController.swift */; };
 		B79E765029B551E4009CCBEF /* TypographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E764F29B551E4009CCBEF /* TypographyViewController.swift */; };
-		B7EF647129B7A5BA00A372DF /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B7EF647029B7A5BA00A372DF /* DesignSystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		B7373DF229A67D4800781764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7373DF429A67D4800781764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7574A6629AFBE94006BC273 /* PrimaryButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonViewController.swift; sourceTree = "<group>"; };
+		B77FC88929BCC899008500AB /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
+		B77FC88C29BCDE0A008500AB /* IOS-Design-System */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "IOS-Design-System"; path = ..; sourceTree = "<group>"; };
 		B79E764D29B26780009CCBEF /* ColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
 		B79E764F29B551E4009CCBEF /* TypographyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7EF647129B7A5BA00A372DF /* DesignSystem in Frameworks */,
+				B77FC88E29BCDE2F008500AB /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +51,7 @@
 		B7373DDA29A67D4700781764 = {
 			isa = PBXGroup;
 			children = (
+				B77FC88B29BCDE0A008500AB /* Packages */,
 				B7373DE529A67D4700781764 /* DesignSystemDEMO */,
 				B7373DE429A67D4700781764 /* Products */,
 				B7373DFC29A67DB600781764 /* Frameworks */,
@@ -90,8 +94,17 @@
 				B7574A6629AFBE94006BC273 /* PrimaryButtonViewController.swift */,
 				B79E764D29B26780009CCBEF /* ColorsViewController.swift */,
 				B79E764F29B551E4009CCBEF /* TypographyViewController.swift */,
+				B77FC88929BCC899008500AB /* LoadViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B77FC88B29BCDE0A008500AB /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B77FC88C29BCDE0A008500AB /* IOS-Design-System */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,7 +124,7 @@
 			);
 			name = DesignSystemDEMO;
 			packageProductDependencies = (
-				B7EF647029B7A5BA00A372DF /* DesignSystem */,
+				B77FC88D29BCDE2F008500AB /* DesignSystem */,
 			);
 			productName = DesignSystemDEMO;
 			productReference = B7373DE329A67D4700781764 /* DesignSystemDEMO.app */;
@@ -142,7 +155,6 @@
 			);
 			mainGroup = B7373DDA29A67D4700781764;
 			packageReferences = (
-				B7EF646F29B7A5BA00A372DF /* XCRemoteSwiftPackageReference "IOS-Design-System" */,
 			);
 			productRefGroup = B7373DE429A67D4700781764 /* Products */;
 			projectDirPath = "";
@@ -171,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B77FC88A29BCC899008500AB /* LoadViewController.swift in Sources */,
 				B79E764E29B26780009CCBEF /* ColorsViewController.swift in Sources */,
 				B79E765029B551E4009CCBEF /* TypographyViewController.swift in Sources */,
 				B7574A6729AFBE94006BC273 /* PrimaryButtonViewController.swift in Sources */,
@@ -397,21 +410,9 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		B7EF646F29B7A5BA00A372DF /* XCRemoteSwiftPackageReference "IOS-Design-System" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gu7araujo/IOS-Design-System";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		B7EF647029B7A5BA00A372DF /* DesignSystem */ = {
+		B77FC88D29BCDE2F008500AB /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B7EF646F29B7A5BA00A372DF /* XCRemoteSwiftPackageReference "IOS-Design-System" */;
 			productName = DesignSystem;
 		};
 /* End XCSwiftPackageProductDependency section */
