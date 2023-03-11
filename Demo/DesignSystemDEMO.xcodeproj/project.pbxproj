@@ -16,6 +16,7 @@
 		B7574A6729AFBE94006BC273 /* PrimaryButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7574A6629AFBE94006BC273 /* PrimaryButtonViewController.swift */; };
 		B77FC88A29BCC899008500AB /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77FC88929BCC899008500AB /* LoadViewController.swift */; };
 		B77FC88E29BCDE2F008500AB /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B77FC88D29BCDE2F008500AB /* DesignSystem */; };
+		B77FC89229BCEFA9008500AB /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77FC89129BCEFA9008500AB /* AlertsViewController.swift */; };
 		B79E764E29B26780009CCBEF /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E764D29B26780009CCBEF /* ColorsViewController.swift */; };
 		B79E765029B551E4009CCBEF /* TypographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E764F29B551E4009CCBEF /* TypographyViewController.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		B7574A6629AFBE94006BC273 /* PrimaryButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonViewController.swift; sourceTree = "<group>"; };
 		B77FC88929BCC899008500AB /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		B77FC88C29BCDE0A008500AB /* IOS-Design-System */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "IOS-Design-System"; path = ..; sourceTree = "<group>"; };
+		B77FC89129BCEFA9008500AB /* AlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		B79E764D29B26780009CCBEF /* ColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
 		B79E764F29B551E4009CCBEF /* TypographyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 				B79E764D29B26780009CCBEF /* ColorsViewController.swift */,
 				B79E764F29B551E4009CCBEF /* TypographyViewController.swift */,
 				B77FC88929BCC899008500AB /* LoadViewController.swift */,
+				B77FC89129BCEFA9008500AB /* AlertsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				B7373DEB29A67D4700781764 /* ViewController.swift in Sources */,
 				B7373DE729A67D4700781764 /* AppDelegate.swift in Sources */,
 				B7373DE929A67D4700781764 /* SceneDelegate.swift in Sources */,
+				B77FC89229BCEFA9008500AB /* AlertsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
