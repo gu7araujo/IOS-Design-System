@@ -12,7 +12,6 @@ public class LoadingViewController: UIViewController {
 
     private lazy var animationView: LottieAnimationView = {
         let view = LottieAnimationView(name: "loading", bundle: .module)
-        view.backgroundColor = Colors.white.rawValue
         view.contentMode = .scaleAspectFit
         view.loopMode = .loop
         return view
@@ -27,6 +26,7 @@ public class LoadingViewController: UIViewController {
         observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [weak self] _ in
             self?.animationView.play()
         }
+        view.backgroundColor = Colors.white.rawValue
         view.alpha = 0.8
     }
 
