@@ -11,6 +11,13 @@ extension UIViewController {
 
     static var loadingViewTag = 22
 
+    public func isLoading() -> Bool {
+        if UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.viewWithTag(UIViewController.loadingViewTag) == nil {
+            return false
+        }
+        return true
+    }
+
     public func setLoading() {
         let loadingViewController = LoadingViewController()
         loadingViewController.view.tag = UIViewController.loadingViewTag

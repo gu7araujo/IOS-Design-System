@@ -49,12 +49,16 @@ class LoadViewController: UIViewController {
     }
 
     @objc private func startLoading() {
-        setLoading()
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(stopLoading), userInfo: nil, repeats: false)
+        if !isLoading() {
+            setLoading()
+            Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(stopLoading), userInfo: nil, repeats: false)
+        }
     }
 
     @objc private func stopLoading() {
-        restoreContent()
+        if isLoading() {
+            restoreContent()
+        }
     }
 
 }
