@@ -26,7 +26,7 @@ let package = Package(
                 .product(name: "Lottie", package: "lottie-ios")
             ],
             path: "Sources",
-            resources: [.process("Assets.xcassets"), .process("Fonts"), .process("Resources")]),
+            resources: [.process("Fonts"), .process("Resources")]),
         .testTarget(
             name: "DesignSystemTests",
             dependencies: ["DesignSystem"]),
