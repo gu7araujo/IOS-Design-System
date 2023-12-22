@@ -7,19 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-}
-
-struct ControllerStruct {
+struct Item {
     var title: String
     var identifier: String
     var viewControllerType: UIViewController.Type?
@@ -33,49 +21,61 @@ struct ControllerStruct {
     }
 }
 
-struct ControllersGroup {
+struct Group {
     var groupName: String
-    var items: [ControllerStruct]
+    var items: [Item]
 }
 
-enum ControllerDataSources {
-    static var viewControllers = [
-        ControllersGroup(groupName: "STYLE", items: [
-            ControllerStruct(title: "Colors", viewControllerType: ColorsViewController.self),
-            ControllerStruct(title: "Typography", viewControllerType: TypographyViewController.self)
+enum ComponentsDataSource {
+    static var groupsAndItems = [
+        Group(groupName: "STYLE", items: [
+            Item(title: "Colors", viewControllerType: ColorsViewController.self),
+            Item(title: "Typography", viewControllerType: TypographyViewController.self)
         ]),
-        ControllersGroup(groupName: "BUTTONS", items: [
-            ControllerStruct(title: "Primary Button", viewControllerType: PrimaryButtonViewController.self)
+        Group(groupName: "BUTTONS", items: [
+            Item(title: "Primary Button", viewControllerType: PrimaryButtonViewController.self)
         ]),
-        ControllersGroup(groupName: "VIEWS", items: [
-            ControllerStruct(title: "Loading", viewControllerType: LoadViewController.self),
-            ControllerStruct(title: "Alerts", viewControllerType: AlertsViewController.self)
+        Group(groupName: "VIEWS", items: [
+            Item(title: "Loading", viewControllerType: LoadViewController.self),
+            Item(title: "Alerts", viewControllerType: AlertsViewController.self)
         ])
     ]
 }
 
+class ViewController: UIViewController {
+
+    @IBOutlet weak var tableView: UITableView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+}
+
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        ControllerDataSources.viewControllers[section].groupName
+        ComponentsDataSource.groupsAndItems[section].groupName
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        ControllerDataSources.viewControllers.count
+        ComponentsDataSource.groupsAndItems.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ControllerDataSources.viewControllers[section].items.count
+        ComponentsDataSource.groupsAndItems[section].items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let vc = ControllerDataSources.viewControllers[indexPath.section].items[indexPath.row]
+        let vc = ComponentsDataSource.groupsAndItems[indexPath.section].items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as UITableViewCell
         cell.textLabel?.text = vc.title
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = ControllerDataSources.viewControllers[indexPath.section].items[indexPath.row]
+        let viewController = ComponentsDataSource.groupsAndItems[indexPath.section].items[indexPath.row]
 
         if let viewControllerType = viewController.viewControllerType {
             let nextViewController = viewControllerType.init()
